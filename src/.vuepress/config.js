@@ -60,6 +60,16 @@ module.exports = {
     editLinkText: 'Help us improve this page!',
     lastUpdated: 'Last Updated',
     nextVersionTitle: 'develop',
+    nav: [
+      {
+        text: 'Our packages',
+        ariaLabel: 'Our packages',
+        items: [
+          { text: 'Laravel Theme Installer', link: 'https://github.com/hexadog/laravel-theme-installer' },
+          { text: 'Laravel Themes Manager', link: 'https://laravel-themes-manager.netlify.app' }
+        ]
+      }
+    ],
     sidebar: [{
         title: 'Package',
         collapsable: false,
