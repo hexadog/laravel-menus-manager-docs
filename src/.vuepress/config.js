@@ -3,7 +3,7 @@ const {
 } = require('../../package')
 
 module.exports = {
-  title: 'Laravel Themes Manager',
+  title: 'Laravel Menus Manager',
   description: description,
   theme: 'titanium',
   head: [
@@ -54,8 +54,8 @@ module.exports = {
   ],
 
   themeConfig: {
-    repo: 'hexadog/laravel-themes-manager',
-    docsRepo: 'hexadog/laravel-themes-manager-docs',
+    repo: 'hexadog/laravel-menus-manager',
+    docsRepo: 'hexadog/laravel-menus-manager-docs',
     editLinks: true,
     editLinkText: 'Help us improve this page!',
     lastUpdated: 'Last Updated',
@@ -65,8 +65,7 @@ module.exports = {
         collapsable: false,
         children: [
           '',
-          'installation',
-          'how-it-works'
+          'installation'
         ]
       },
       {
@@ -74,20 +73,11 @@ module.exports = {
         collapsable: false,
         children: [
           'usage/basic',
-          'usage/middleware',
-          'usage/assets',
-          'usage/components',
-          'usage/error-views',
-          'usage/package-views'
-        ]
-      },
-      {
-        title: 'Configuration',
-        collapsable: false,
-        children: [
-          'configuration/directory',
-          'configuration/assets',
-          'configuration/fallback-theme'
+          'usage/hierarchy',
+          'usage/item',
+          'usage/search',
+          'usage/tree',
+          'usage/components'
         ]
       }
     ]

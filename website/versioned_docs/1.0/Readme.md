@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: logo.png
-tagline: Bring multi themes support to your Laravel application with a full-featured Themes Manager
+tagline: Dynamic hierarchical Menus Management for your Laravel application
 actionText: Quick Start →
 actionLink: /installation
 ---

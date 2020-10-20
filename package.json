@@ -1,13 +1,13 @@
 {
-  "name": "laravel-themes-manager",
+  "name": "laravel-menus-manager",
   "version": "1.0.0",
-  "description": "Bring multi themes support to your Laravel application with a full-featured Themes Manager",
+  "description": "Dynamic hierarchical Menus Management for your Laravel application",
   "main": "index.js",
   "authors": {
     "name": "Gaetan",
     "email": "gaetan@hexadog.com"
   },
-  "repository": "https://github.com/hexadog/laravel-themes-manager/laravel-themes-manager",
+  "repository": "https://github.com/hexadog/laravel-menus-manager",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src"
