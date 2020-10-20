@@ -1,3 +1,0 @@
-# Fallback theme
-
-Themes Manager will ...

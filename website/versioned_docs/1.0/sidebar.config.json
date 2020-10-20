@@ -1,0 +1,48 @@
+{
+  "sidebar": [
+    {
+      "title": "Package",
+      "collapsable": false,
+      "children": [
+        [
+          "/",
+          "Introduction"
+        ],
+        [
+          "/installation",
+          "Installation"
+        ]
+      ]
+    },
+    {
+      "title": "Usage",
+      "collapsable": false,
+      "children": [
+        [
+          "/usage/basic",
+          "Basic usage"
+        ],
+        [
+          "/usage/hierarchy",
+          "Menu hierarchy"
+        ],
+        [
+          "/usage/item",
+          "Menu item"
+        ],
+        [
+          "/usage/search",
+          "Search for item"
+        ],
+        [
+          "/usage/tree",
+          "Menu tree"
+        ],
+        [
+          "/usage/components",
+          "Blade components"
+        ]
+      ]
+    }
+  ]
+}
