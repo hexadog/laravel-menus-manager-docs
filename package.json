@@ -10,13 +10,12 @@
   "repository": "https://github.com/hexadog/laravel-menus-manager",
   "scripts": {
     "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "build": "vuepress build src",
+    "bump-version": "node -e 'require(\"./src/.vuepress/lib/versioning.js\").generate()'"
   },
   "license": "MIT",
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.7.1",
-    "vuepress": "^1.5.3",
-    "vuepress-plugin-versioning": "^4.8.2",
-    "vuepress-theme-titanium": "^4.8.2"
+    "vuepress": "^1.5.3"
   }
 }
