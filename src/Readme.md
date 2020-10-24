@@ -3,7 +3,7 @@ home: true
 heroImage: logo.png
 tagline: Dynamic hierarchical Menus Management for your Laravel application
 actionText: Quick Start →
-actionLink: /installation
+actionLink: /latest
 ---
 
 <div class="theme-default-content custom content__default"></div>

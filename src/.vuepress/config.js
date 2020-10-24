@@ -1,3 +1,4 @@
+const versioning = require('./lib/versioning.js')
 const {
   description
 } = require('../../package')
@@ -5,7 +6,6 @@ const {
 module.exports = {
   title: 'Laravel Menus Manager',
   description: description,
-  theme: 'titanium',
   head: [
     [
       'link',
@@ -59,8 +59,16 @@ module.exports = {
     editLinks: true,
     editLinkText: 'Help us improve this page!',
     lastUpdated: 'Last Updated',
-    nextVersionTitle: 'develop',
+    versions: {
+      latest: versioning.versions.latest,
+      selected: versioning.versions.latest,
+      all: versioning.versions.all
+    },
     nav: [
+      {
+          text: 'Versions',
+          items: versioning.linksFor('installation.md')
+      },
       {
         text: 'Our packages',
         ariaLabel: 'Our packages',
@@ -70,31 +78,15 @@ module.exports = {
         ]
       }
     ],
-    sidebar: [{
-        title: 'Package',
-        collapsable: false,
-        children: [
-          '',
-          'installation'
-        ]
-      },
-      {
-        title: 'Usage',
-        collapsable: false,
-        children: [
-          'usage/basic',
-          'usage/hierarchy',
-          'usage/item',
-          'usage/search',
-          'usage/tree',
-          'usage/components'
-        ]
-      }
-    ]
+    sidebar: versioning.sidebars
   },
 
   plugins: [
-    'versioning',
-    '@vuepress/plugin-back-to-top'
+    '@vuepress/plugin-back-to-top',
+    ['@vuepress/search', {
+      searchMaxSuggestions: 10,
+      // Only search the latest version, e.g. 4.3, otherwise many duplicates will show up
+      test: `/${versioning.versions.latest.replace('.', '\\.')}/`
+    }]
   ]
 }

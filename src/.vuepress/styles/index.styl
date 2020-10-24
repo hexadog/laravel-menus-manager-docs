@@ -12,5 +12,92 @@
   box-sizing: border-box
   border-bottom: 1px solid $accentColor
 
+.page
+  flex:1 1 auto
+  min-width:0
+
+@media (min-width:719px)
+  .content:not(.custom)
+    padding-top:7rem
+ 
+.content:not(.custom)
+  max-width:740px;
+  margin:0 auto;
+  padding:2rem 2.5rem
+
+@media (max-width:959px)
+  .content:not(.custom)
+    padding:2rem
+ 
+
+@media (max-width:419px)
+  .content:not(.custom)
+    padding:1.5rem
+ 
+.content:not(.custom)
+ padding-top:6rem
+
+@media (min-width:719px)
+ .content:not(.custom)
+  padding-top:7rem
+ 
+
+.content:not(.custom)>:first-child
+  margin-top:0
+
+.content:not(.custom) a:hover
+  text-decoration:underline
+
+.content:not(.custom) p.demo
+  padding:1rem 1.5rem;
+  border:1px solid #ddd;
+  border-radius:4px
+
+.content:not(.custom) img
+  max-width:100%
+
+.content.custom
+  padding:0;
+  margin:0
+
+.content.custom img
+  max-width:100%
+
+.content code
+  font-size:.875rem
+  font-weight:400
+  line-height:1.5
+
+.content pre,
+.content pre[class*=language-]
+  font-size:.875rem
+  font-weight:400
+  line-height:1.5
+
+div[class*=language-] .highlight-lines
+  padding-top:1.3rem
+  line-height:1.4
+
+div[class*=language-]:before
+  font-size:.75rem
+
+div[class*=language-].line-numbers-mode pre
+  padding-left:4.5rem
+
+div[class*=language-].line-numbers-mode .line-numbers-wrapper
+  text-align:center
+  padding:1.25rem 0
+  line-height:1.4
+
+div[class*=language-].line-numbers-mode .line-numbers-wrapper .line-number
+  font-size:.85em
+
+div[class*=language-].line-numbers-mode:after
+  border-radius:6px 0 0 6px;
+  border-right:1px solid rgba(0,0,0,.66);
+  background-color:#282c34
+
+
+
 .footer
   bakground: #ffffff
