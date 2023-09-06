@@ -14,10 +14,10 @@ $menuItem->url('https://github.com/hexadog/laravel-themes-manager', 'Laravel The
 $menuItem->url('https://github.com/hexadog/laravel-theme-installer', 'Laravel Theme Installer')->order(2);
 
 // Create first-level items with visibility condition
-$menu->route('profile.show', __('Profile'))->if(function () {
+$menu->route('profile.show', fn () => __('New Profile'))->if(function () {
     return Auth()->check()
 });
-$menu->route('login', __('Login'))->if(function() {
+$menu->route('login', fn () => __('Login'))->if(function() {
     return !Auth()->check()
 });
 ```
@@ -48,7 +48,7 @@ $menuItem = $menu->url('https://hexadog.com', 'hexadog');
 ```
 
 ### Divider item
-A simple divider: no action available. No title required for this type of item.
+A simple divider: no action available. No title is required for this type of item.
 ```php
 $menuItem = $menu->divider();
 ```
@@ -66,7 +66,7 @@ $menu->route('index', 'Home')->icon('fas fa-home');
 ```
 
 ## Item Order
-By default items are displayed in order they are created. You can specify item order to organize your menu entries:
+By default, items are displayed in order they are created. You can specify item order to organize your menu entries:
 ```php
 $menu->route('index', 'Home')->order(1);
 $menu->route('contact', 'Contact')->order(2);
@@ -77,17 +77,17 @@ $menu->route('contact', 'Contact')->order(2);
 $menuItem->isVisible();
 ```
 
-You can condition item visibility by using `if()` method.
+You can condition item visibility by using the `if()` method.
 You can chain conditions. This way each condition must be filled to make the item visible.
 ```php
-$menu->route('profile.show', __('Profile'))->if(function() {
+$menu->route('profile.show', fn () => __('Profile'))->if(function() {
     return Auth()->check()
 });
-$menu->route('login', __('Login'))->if(function() {
+$menu->route('login', fn () => __('Login'))->if(function() {
     return !Auth()->check()
 });
 
-$menu->route('post.create', __('New Post'))->if(function() {
+$menu->route('post.create', fn () => __('New Post'))->if(function() {
     return Auth()->check()
 })->if(function() {
     return Auth()->user()->can('create.post')
@@ -95,8 +95,8 @@ $menu->route('post.create', __('New Post'))->if(function() {
 ```
 
 ## Active state
-Check if current item is active or has an active child.
-Depending on the item type, active state is determined using `Request::is()` or `Route::is()` Laravel methods.
+Check if the current item is active or has an active child.
+Depending on the item type, the active state is determined using the `Request::is()` or `Route::is()` Laravel methods.
 ```php
 $menuItem->isActive();
 ```
