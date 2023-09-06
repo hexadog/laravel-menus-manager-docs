@@ -14,11 +14,15 @@ $menuItem->url('https://github.com/hexadog/laravel-themes-manager', 'Laravel The
 $menuItem->url('https://github.com/hexadog/laravel-theme-installer', 'Laravel Theme Installer')->order(2);
 
 // Create first-level items with visibility condition
-$menu->route('profile.show', __('Profile'))->if(Auth()->check());
-$menu->route('login', __('Login'))->if(!Auth()->check());
+$menu->route('profile.show', __('Profile'))->if(function () {
+    return Auth()->check()
+});
+$menu->route('login', __('Login'))->if(function() {
+    return !Auth()->check()
+});
 ```
 
-You can access to the generated item url with `getUrl()` method on any item. 
+You can access to the generated item url with `getUrl()` method on any item.
 ```php
 $menuItem->getUrl();
 ```
@@ -76,15 +80,23 @@ $menuItem->isVisible();
 You can condition item visibility by using `if()` method.
 You can chain conditions. This way each condition must be filled to make the item visible.
 ```php
-$menu->route('profile.show', __('Profile'))->if(Auth()->check());
-$menu->route('login', __('Login'))->if(!Auth()->check());
+$menu->route('profile.show', __('Profile'))->if(function() {
+    return Auth()->check()
+});
+$menu->route('login', __('Login'))->if(function() {
+    return !Auth()->check()
+});
 
-$menu->route('post.create', __('New Post'))->if(Auth()->check())->if(Auth()->user()->can('create.post'));
+$menu->route('post.create', __('New Post'))->if(function() {
+    return Auth()->check()
+})->if(function() {
+    return Auth()->user()->can('create.post')
+});
 ```
 
 ## Active state
 Check if current item is active or has an active child.
-Depending on the item type, active state is determined using `Request::is()` or `Route::is()` Laravel methods. 
+Depending on the item type, active state is determined using `Request::is()` or `Route::is()` Laravel methods.
 ```php
 $menuItem->isActive();
 ```

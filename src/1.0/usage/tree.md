@@ -16,8 +16,12 @@ $menuItem->url('https://github.com/hexadog/laravel-themes-manager', 'Laravel The
 $menuItem->url('https://github.com/hexadog/laravel-theme-installer', 'Laravel Theme Installer')->order(2);
 
 // Create first-level items with visibility condition
-$menu->route('profile.show', __('Profile'))->if(Auth()->check());
-$menu->route('login', __('Login'))->if(!Auth()->check());
+$menu->route('profile.show', __('Profile'))->if(function() {
+    return Auth()->check()
+});
+$menu->route('login', __('Login'))->if(function() {
+    return !Auth()->check()
+});
 
 // Get Menu Tree
 $menu->toArray();
